@@ -1,0 +1,103 @@
+#1931
+import sys
+
+def greedy(meeting):
+    meeting_count = 0
+    start_time = 0
+
+    for time in meeting:
+        if time[0] >= start_time:
+            start_time = time[1]
+            meeting_count += 1
+    return meeting_count
+
+
+if __name__ == "__main__":
+    mCount = int(sys.stdin.readline())
+    meeting = []
+    for i in range(mCount):
+        start, end = map(int, sys.stdin.readline().split())
+        meeting.append((start, end))
+    # 시작 시간 기준으로 정렬
+    meeting = sorted(meeting, key=lambda time: time[0])
+    # 종료 시간 기준으로 정렬
+    meeting = sorted(meeting, key=lambda time: time[1])
+    print(greedy(meeting))
+    
+    
+    
+#1080    
+N, M =map(int,input().split())
+
+A = [list(map(int,list(input()))) for _ in range(N)]
+B = [list(map(int,list(input()))) for _ in range(N)]
+
+def flip(x,y):
+    for i in range(x,x+3):
+        for j in range(y,y+3):
+            A[i][j] = 1 - A[i][j]
+
+def checkEquality():
+    for i in range(N):
+        for j in range(M):
+            if A[i][j] !=B[i][j]:
+                return 0
+    return 1
+
+cnt = 0
+for i in range(0,N-2):
+    for j in range(0,M-2):
+        if A[i][j] !=B[i][j]:
+            flip(i,j)
+            cnt+=1
+
+if checkEquality():
+    print(cnt)
+else:
+    print(-1) 
+    
+    
+    
+#1541
+a = input().split('-')
+num = []
+for i in a:
+    cnt = 0
+    s = i.split('+')
+    for j in s:
+        cnt += int(j)
+    num.append(cnt)
+n = num[0]
+for i in range(1, len(num)):
+    n -= num[i]
+print(n)
+
+
+
+#1507
+import sys
+input = sys.stdin.readline
+n = int(input())
+s = []
+s_ = [[1] * n for i in range(n)]
+result = 0
+for i in range(n):
+    s.append(list(map(int, input().split())))
+def floyd():
+    global result
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                if i == j or j == k or i == k:
+                    continue
+                if s[i][j] == s[i][k] + s[k][j]:
+                    s_[i][j] = 0
+                elif s[i][j] > s[i][k] + s[k][j]:
+                    result = -1
+floyd()
+if result != -1:
+    for i in range(n):
+        for j in range(i, n):
+            if s_[i][j]:
+                result += s[i][j]
+print(result)
