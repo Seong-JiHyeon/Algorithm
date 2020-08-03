@@ -1,2 +1,2 @@
 # Algorithm
-C-Algorithm
+Python-Algorithm
