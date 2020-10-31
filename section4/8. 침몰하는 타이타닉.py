@@ -1,11 +1,14 @@
 import sys
 from collections import deque
 sys.stdin=open("input.txt", "r")
+
 n, limit=map(int, input().split())
 p=list(map(int, input().split()))
+
 p.sort()
 p=deque(p)
 cnt=0
+
 while p:
     if len(p)==1:
         cnt+=1
@@ -17,5 +20,6 @@ while p:
         p.popleft()
         p.pop()
         cnt+=1
+        
 print(cnt)
 
