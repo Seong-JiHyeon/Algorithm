@@ -21,7 +21,7 @@ for _ in range(n):
 Line.sort()
 
 lt=1
-rt=Line[n-1]
+rt=Line[n-1] #혹은 Line[n-1]-Line[0]
 
 while lt<=rt:
     mid=(lt+rt)//2
