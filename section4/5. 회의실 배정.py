@@ -20,7 +20,7 @@ for x, y in meeting:
 print(cnt)
 
 
-#다음과 같은 코드도 
+#다음과 같은 코드도 가능하다
 all = sorted(a, key = lambda x: (x[1], x[0]))
 end=all[0][1]
 
