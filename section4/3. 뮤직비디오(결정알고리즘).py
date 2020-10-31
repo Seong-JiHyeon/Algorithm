@@ -25,7 +25,7 @@ while lt<=rt:
     mid=(lt+rt)//2
     if mid>=maxx and Count(mid)<=m: 
         #최대 곡 길이보다는 dvd용량이 커야 한다(maxx)
-        #앞의 문제와 달리 m개 이상을 만들 수 없으므로 res는 <=m안에서 정의되어야 한다
+        #dvd 크기는 최소여야 하기 때문에 m 이하 범위
         res=mid
         rt=mid-1
     else:
