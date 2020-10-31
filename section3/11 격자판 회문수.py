@@ -1,14 +1,16 @@
 import sys
 sys.stdin=open("input.txt", "r")
+
 board=[list(map(int, input().split())) for _ in range(7)]
 cnt=0
-for i in range(3):
-    for j in range(7):
-        tmp=board[j][i:i+5]
-        if tmp==tmp[::-1]:
+
+for i in range(3): #회문의 길이가 5이기 때문에 시작점이 0,1,2
+    for j in range(7): #모든 행과 열 탐색
+        tmp=board[j][i:i+5] #각 행에 따른 5자리 숫자 슬라이스
+        if tmp==tmp[::-1]: #역순으로 하여 회문인지 확인
             cnt+=1
-        for k in range(2):
-            if board[i+k][j]!=board[i+5-k-1][j]:
+        for k in range(2): #각 열에 따른 5자리 숫자 
+            if board[i+k][j]!=board[i+5-k-1][j]: #5자리 중 가운데 숫자 제외 숫자들 비교 (ex. 0=4, 1=3, 2x)
                 break;
         else:
             cnt+=1
