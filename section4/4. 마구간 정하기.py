@@ -1,5 +1,6 @@
 import sys
 sys.stdin=open("input.txt", "r")
+
 def Count(len):
     cnt=1
     ep=Line[0]
@@ -9,17 +10,23 @@ def Count(len):
             ep=Line[i]
     return cnt
 
+
 n, c=map(int, input().split())
 Line=[]
+
 for _ in range(n):
     tmp=int(input())
     Line.append(tmp)
+    
 Line.sort()
+
 lt=1
 rt=Line[n-1]
+
 while lt<=rt:
     mid=(lt+rt)//2
     if Count(mid)>=c:
+        #c마리 이상 배치하는 것은 답에 
         res=mid
         lt=mid+1
     else:
