@@ -26,7 +26,7 @@ rt=Line[n-1] #혹은 Line[n-1]-Line[0]
 while lt<=rt:
     mid=(lt+rt)//2
     if Count(mid)>=c:
-        #c마리 이상 배치하는 것은 답에 
+        #c마리 이상 배치하는 것은 답에 포함됨 
         res=mid
         lt=mid+1
     else:
