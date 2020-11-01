@@ -2,6 +2,7 @@ def DFS(v):
     if v>7:
         return
     else:  
+        #트리 형태의 경우 DFS재귀 호출이 두 번 필요하다 
         print(v, end=' ') #전위 순회 
         DFS(v*2)
         #중위 순회 
