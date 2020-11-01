@@ -26,3 +26,12 @@ if __name__=="__main__":
     
     DFS(0)
     print(cnt)
+
+
+<파이썬 순열 라이브러리>
+from itertools import permutations
+
+for i in permutations([1,2,3,4], 2):
+    print(i, end=" ")
+
+ 
