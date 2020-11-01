@@ -13,7 +13,7 @@ def DFS(L, sum, tsum):
         if sum>result:
             result=sum
     else:
-        DFS(L+1, sum+a[L], tsum+a[L])
+        DFS(L+1, sum+a[L], tsum+a[L]) #tsum은 현재까지 판단한 모든 바둑이들의 무게 
         DFS(L+1, sum, tsum+a[L])
 
 
