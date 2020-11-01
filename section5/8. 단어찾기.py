@@ -34,3 +34,4 @@ for _ in range(n-1):
 
 answer = collections.Counter(word) - collections.Counter(poem)
 print(list(answer.keys())[0])
+
