@@ -1,7 +1,7 @@
 import sys
 sys.stdin=open("input.txt", "r")
 
-def DFS(L, s):
+def DFS(L, s): #s는 start 변수 
     global cnt
     if L==m:
         for i in range(m):
@@ -9,7 +9,7 @@ def DFS(L, s):
         print()
         cnt+=1
     else:
-        for i in range(s, n+1):
+        for i in range(s, n+1): #한 번 뽑은 수는 다시 뽑을 필요가 없음 (뒷 리스트 인덱스를 넘겨주는 것과 같음) 
             res[L]=i
             DFS(L+1, i+1)
            
