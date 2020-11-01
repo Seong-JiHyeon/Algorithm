@@ -7,6 +7,7 @@ def DFS(L, sum): #L=level, a의 index의 원소를 사용하겠다/사용하지 
     
     if L==n:
         if sum==(total-sum): #전체의 합에서 부분집합의 합을 뺀 것은 또 다른 부분집합의 합이다 
+            #sum==(total//2)를 할 경우, total이 홀수이면 아예 답이 나올 수 없음에도 정답으로 처리되는 경우가 있다 
             print("YES")
             sys.exit(0)
     else:
