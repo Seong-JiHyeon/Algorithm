@@ -21,3 +21,14 @@ cnt=0
 
 DFS(0, 1)
 print(cnt)
+
+
+<파이썬 조합 라이브러리>
+from itertools import combinations
+
+for i in combinations([1,2,3,4], 2):
+    print(i, end=" ")
+#(1, 2) (1, 3) (1, 4) (2, 3) (2, 4) (3, 4)
+
+ 
+ 
