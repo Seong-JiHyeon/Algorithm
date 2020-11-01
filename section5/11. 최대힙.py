@@ -14,6 +14,6 @@ while True:
         else:
             print(-hq.heappop(a)) #음수를 다시 양수로 바꾼다 
     else:
-        hq.heappush(a, -n) #최대힙을 위해 음수로 
+        hq.heappush(a, -n) #최대힙을 위해 음수로 바꾼다 
 
 
