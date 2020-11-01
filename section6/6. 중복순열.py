@@ -31,3 +31,8 @@ from itertools import product
 
 for i in product(range(n), repeat=m):
     print(i)
+
+#이진 트리는 값에 대해 넣고, 넣지않고의 선택경우가 있다면 
+#지금 문제와 같은 경우는 무조건 넣는 경우밖에 없음 
+
+ 
