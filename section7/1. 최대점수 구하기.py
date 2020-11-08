@@ -1,5 +1,6 @@
 import sys
 sys.stdin=open("input.txt", "r")
+
 def DFS(L, sum, time):
     global res
     if time>m:
